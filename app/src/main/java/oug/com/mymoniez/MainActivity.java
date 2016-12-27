@@ -10,6 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EVENT_ID = "oug.com.mymoniez.eventID";
+    public static final String VALUE = "oug.com.mymoniez.value";
+    public static final String DATE = "oug.com.mymoniez.date";
+    public static final String CATEGORY = "oug.com.mymoniez.category";
+    public static final String DESCRIPTION = "oug.com.mymoniez.description";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

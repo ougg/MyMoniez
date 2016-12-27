@@ -21,7 +21,7 @@
         android:text="1111$"
         android:textColor="#ffffff"
         android:textAlignment="center"
-        android:textSize="@dimen/list_item_large_font"
+        android:textSize="@dimen/large_font"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true" />
 
@@ -29,7 +29,7 @@
         style="@style/listItemText"
         android:id="@+id/categoryText"
         android:text="Category"
-        android:textSize="@dimen/list_item_medium_font"
+        android:textSize="@dimen/medium_font"
         android:layout_alignTop="@+id/categoryIcon"
         android:paddingTop="@dimen/list_item_text_padding"
 
@@ -39,7 +39,7 @@
         style="@style/listItemText"
         android:id="@+id/descriptionText"
         android:text="Description"
-        android:textSize="@dimen/list_item_small_font"
+        android:textSize="@dimen/small_font"
         android:layout_alignBottom="@+id/categoryIcon"
         android:paddingBottom="@dimen/list_item_text_padding"
 

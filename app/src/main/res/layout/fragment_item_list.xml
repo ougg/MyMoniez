@@ -2,9 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemListFragment">
+    tools:context=".ItemListFragment"
+    android:padding="@dimen/list_fragment_padding">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView"/>
+        android:id="@android:id/list"/>
 </LinearLayout>

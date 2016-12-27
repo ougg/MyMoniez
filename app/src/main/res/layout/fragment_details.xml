@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".DetailsFragment"
+    android:padding="@dimen/details_layout_padding">
+
+
+    <ImageView
+        android:layout_width="@dimen/details_image_size"
+        android:layout_height="@dimen/details_image_size"
+        android:id="@+id/categoryIcon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="@dimen/details_category_width"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:id="@+id/categoryText"
+        android:layout_toEndOf="@+id/categoryIcon"
+        android:layout_alignTop="@+id/categoryIcon"
+        android:paddingStart="@dimen/details_text_padding"
+        android:textSize="@dimen/medium_font"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0000$"
+        android:id="@+id/valueText"
+        android:layout_alignEnd="@+id/categoryText"
+        android:layout_alignBottom="@+id/categoryIcon"
+        android:textSize="@dimen/large_font"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date added: 22.04.2016 22:56"
+        android:id="@+id/dateText"
+        android:layout_below="@+id/categoryIcon"
+        android:layout_alignStart="@+id/categoryIcon"
+        android:layout_marginTop="@dimen/details_top_margin"
+        android:textSize="@dimen/small_font"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description of the event ex. 'dinner with my wife'"
+        android:id="@+id/descriptionText"
+        android:layout_below="@+id/dateText"
+        android:layout_alignStart="@id/dateText"
+        android:layout_alignEnd="@id/dateText"
+        android:layout_marginTop="@dimen/details_top_margin"
+        android:textSize="@dimen/tiny_font"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionsButton"
+        android:layout_below="@id/descriptionText"
+        android:layout_alignEnd="@id/categoryText"
+        android:layout_marginTop="@dimen/details_top_margin"
+        android:padding="@dimen/details_text_padding"
+        android:background="@drawable/delete"
+        android:onClick="deleteClicked"/>
+
+
+</RelativeLayout>

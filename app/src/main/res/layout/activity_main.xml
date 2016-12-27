@@ -21,7 +21,11 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listFragment"
+        android:name="oug.com.mymoniez.ItemListFragment"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
