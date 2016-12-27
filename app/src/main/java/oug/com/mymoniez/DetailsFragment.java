@@ -31,12 +31,13 @@ public class DetailsFragment extends DialogFragment {
         ((ImageView) view.findViewById(R.id.categoryIcon)).setImageResource(MoneyEvent.getCategoryDrawable(category));
         ((TextView) view.findViewById(R.id.categoryText)).setText(MoneyEvent.getCategoryName(category));
         ((TextView) view.findViewById(R.id.valueText)).setText(args.getString(MainActivity.VALUE));
-        ((TextView) view.findViewById(R.id.dateText)).setText(args.getString(MainActivity.DATE));
+        ((TextView) view.findViewById(R.id.dateText)).setText(getString(R.string.date_added)+args.getString(MainActivity.DATE));
         ((TextView) view.findViewById(R.id.descriptionText)).setText(args.getString(MainActivity.DESCRIPTION));
         return view;
     }
     public void deleteClicked(View v){
         int id = getArguments().getInt(MainActivity.EVENT_ID);
+        //TODO show confirmation dialog
         //delete an item from database
         //refresh the list
         //close the dialog

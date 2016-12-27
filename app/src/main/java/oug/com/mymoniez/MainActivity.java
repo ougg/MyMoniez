@@ -3,6 +3,8 @@ package oug.com.mymoniez;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -31,6 +33,17 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        ListFragmentPagerAdapter adapter = new ListFragmentPagerAdapter(getSupportFragmentManager());
+        adapter.addItem(new ItemListFragment(),getString(R.string.week));
+        adapter.addItem(new ItemListFragment(),getString(R.string.month));
+        adapter.addItem(new ItemListFragment(),getString(R.string.all));
+        pager.setAdapter(adapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(pager);
+
     }
 
     @Override
