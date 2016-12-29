@@ -21,10 +21,17 @@
 
     <!-- DETAILS -->
     <dimen name="details_image_size">75dp</dimen>
-    <dimen name="details_layout_padding">5dp</dimen>
+    <dimen name="details_layout_padding">10dp</dimen>
     <dimen name="details_category_width">175dp</dimen>
     <dimen name="details_text_padding">10dp</dimen>
     <dimen name="details_top_margin">5dp</dimen>
+
+    <!--ADD NEW -->
+    <dimen name="add_new_button_width">230dp</dimen>
+    <dimen name="add_new_desc_editText_height">150dp</dimen>
+    <dimen name="add_new_editText_padding">10dp</dimen>
+    <dimen name="add_new_top_margin">10dp</dimen>
+    <dimen name="add_new_layout_padding">10dp</dimen>
 
 
 </resources>

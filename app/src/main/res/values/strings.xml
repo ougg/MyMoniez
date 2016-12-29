@@ -8,4 +8,9 @@
     <string name="week">Week</string>
     <string name="month">Month</string>
     <string name="all">All</string>
+    <string name="expense">Expense</string>
+    <string name="income">Income</string>
+    <string name="pick_category">Pick category</string>
+    <string name="enter_description">Enter description...</string>
+    <string name="add">Add</string>
 </resources>

@@ -7,8 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -33,14 +36,19 @@ public class DetailsFragment extends DialogFragment {
         ((TextView) view.findViewById(R.id.valueText)).setText(args.getString(MainActivity.VALUE));
         ((TextView) view.findViewById(R.id.dateText)).setText(getString(R.string.date_added)+args.getString(MainActivity.DATE));
         ((TextView) view.findViewById(R.id.descriptionText)).setText(args.getString(MainActivity.DESCRIPTION));
+
+
+        ImageButton deleteButton = (ImageButton) view.findViewById(R.id.deleteButton);
+        deleteButton.setOnClickListener(new OnDeleteClickListener());
         return view;
     }
-    public void deleteClicked(View v){
-        int id = getArguments().getInt(MainActivity.EVENT_ID);
-        //TODO show confirmation dialog
-        //delete an item from database
-        //refresh the list
-        //close the dialog
-    }
 
+    class OnDeleteClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            Bundle args = getArguments();
+            int id = args.getInt(MainActivity.EVENT_ID);
+            Toast.makeText(getContext(),"Delete clicked",Toast.LENGTH_SHORT).show();
+        }
+    }
 }
