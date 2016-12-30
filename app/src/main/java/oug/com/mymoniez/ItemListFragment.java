@@ -52,8 +52,8 @@ public class ItemListFragment extends ListFragment {
         Bundle arguments = new Bundle();
         arguments.putInt(MainActivity.EVENT_ID,event.getEventId());
         arguments.putSerializable(MainActivity.CATEGORY,event.getCategory());
-        arguments.putString(MainActivity.VALUE,event.getValueString());
-        arguments.putString(MainActivity.DATE,event.getDateString());
+        arguments.putString(MainActivity.VALUE,MoneyEvent.getValueString(event.getValue()));
+        arguments.putString(MainActivity.DATE,MoneyEvent.getDateString(event.getDateMillis()));
         arguments.putString(MainActivity.DESCRIPTION,event.getDescription());
 
         DetailsFragment details = new DetailsFragment();

@@ -2,7 +2,6 @@
     <string name="app_name">MyMoniez</string>
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="date_added">Date added: </string>
     <string name="week">Week</string>
@@ -13,4 +12,5 @@
     <string name="pick_category">Pick category</string>
     <string name="enter_description">Enter description...</string>
     <string name="add">Add</string>
+    <string name="specifyValue">You must enter a right value</string>
 </resources>

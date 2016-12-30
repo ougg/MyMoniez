@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="oug.com.mymoniez.AddNewFragment"
+    tools:context=".AddNewItemFragment"
     android:padding="@dimen/add_new_layout_padding">
 
     <RelativeLayout
@@ -36,7 +36,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@+id/categoryIcon"
             android:layout_toRightOf="@+id/categoryIcon"
-            android:textSize="@dimen/large_font" />
+            android:textSize="@dimen/large_font"
+            android:textAlignment="viewEnd"/>
 
         <Button
             android:layout_width="@dimen/add_new_button_width"

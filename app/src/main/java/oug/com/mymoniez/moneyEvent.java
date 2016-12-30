@@ -3,6 +3,7 @@ package oug.com.mymoniez;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class MoneyEvent {
     private int eventId;
@@ -65,10 +66,10 @@ public class MoneyEvent {
                 return "Other";
         }
     }
-    public String getValueString(){
-        return String.format("%.2f",value);
+    public static String getValueString(double value){
+        return String.format(Locale.US,"%.2f",value);
     }
-    public String getDateString(){
+    public static String getDateString(long dateMillis){
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyy hh:mm");
         Date date = new Date();
         date.setTime(dateMillis);
