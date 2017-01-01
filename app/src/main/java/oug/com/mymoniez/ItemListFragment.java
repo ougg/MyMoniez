@@ -14,9 +14,12 @@ import java.util.ArrayList;
 
 
 public class ItemListFragment extends ListFragment {
+    private MoneyEvent.Category filterCategory;
+    long maxTimeMillis;
 
     public ItemListFragment() {
         // Required empty public constructor
+        filterCategory=null;
     }
 
     @Override
@@ -60,5 +63,24 @@ public class ItemListFragment extends ListFragment {
         details.setArguments(arguments);
         FragmentManager fm = getActivity().getSupportFragmentManager();
         details.show(fm,"Dialog");
+    }
+
+    public double getTotal(){
+        double total=0;
+        for (int i=0;i<getListAdapter().getCount();i++){
+            total+=((MoneyEvent) getListAdapter().getItem(i)).getValue();
+        }
+        return total;
+    }
+
+    public void refreshList(){
+        //TODO
+    }
+
+    public void setFilterCategory(MoneyEvent.Category filterCategory) {
+        this.filterCategory = filterCategory;
+    }
+    public void setMaxTimeMillis(long maxTimeMillis) {
+        this.maxTimeMillis = maxTimeMillis;
     }
 }

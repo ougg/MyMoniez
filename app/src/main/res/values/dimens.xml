@@ -33,5 +33,12 @@
     <dimen name="add_new_top_margin">10dp</dimen>
     <dimen name="add_new_layout_padding">10dp</dimen>
 
+    <!--TOOLBAR -->
+    <dimen name="toolbar_button_padding">5dp</dimen>
+    <dimen name="toolbar_padding">5dp</dimen>
+
+    <!--ACTION BUTTON -->
+    <dimen name="action_button_size">65dp</dimen>
+
 
 </resources>
