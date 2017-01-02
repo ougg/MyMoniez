@@ -103,7 +103,7 @@ public class AddNewItemFragment extends DialogFragment implements View.OnClickLi
     }
 
     public void addNew(){
-        Log.i("testing",value+"");
+        //Log.i("testing",value+"");
         String text = valueEditText.getText().toString();
         if(value==-1 && (text.equals("")||text==null)){
             Toast.makeText(getContext(),getString(R.string.specifyValue),Toast.LENGTH_SHORT).show();
@@ -123,9 +123,11 @@ public class AddNewItemFragment extends DialogFragment implements View.OnClickLi
 
         description = descriptionEditText.getText().toString();
         dateMillis = System.currentTimeMillis();
-
-        //TODO add a new record to the database
-
+        MoneyEvent newItem = new MoneyEvent(value,dateMillis,category,description);
+        DBHandler handler = ((MainActivity)getActivity()).getHandler();
+        handler.addItem(newItem);
+        ((MainActivity)getActivity()).refreshLists();
+        dismiss();
     }
 
 

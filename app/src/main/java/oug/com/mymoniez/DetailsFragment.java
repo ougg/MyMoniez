@@ -48,7 +48,10 @@ public class DetailsFragment extends DialogFragment {
         public void onClick(View view) {
             Bundle args = getArguments();
             int id = args.getInt(MainActivity.EVENT_ID);
-            Toast.makeText(getContext(),"Delete clicked",Toast.LENGTH_SHORT).show();
+            DBHandler handler = ((MainActivity)getActivity()).getHandler();
+            handler.deleteItem(id);
+            ((MainActivity)getActivity()).refreshLists();
+            dismiss();
         }
     }
 }

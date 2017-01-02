@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class EventAdapter extends ArrayAdapter<MoneyEvent>{
-    public EventAdapter(Context context, List<MoneyEvent> objects) {
+public class ItemAdapter extends ArrayAdapter<MoneyEvent>{
+    public ItemAdapter(Context context, List<MoneyEvent> objects) {
         super(context, R.layout.list_item, objects);
     }
 

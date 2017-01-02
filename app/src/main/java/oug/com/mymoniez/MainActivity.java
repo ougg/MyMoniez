@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String DESCRIPTION = "oug.com.mymoniez.description";
     Button filterButton;
     ItemListFragment weekList,monthList,allList;
+    DBHandler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        handler = new DBHandler(this,null,null,1);
+
         filterButton  = (Button) findViewById(R.id.filterButton);
 
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
@@ -48,10 +51,13 @@ public class MainActivity extends AppCompatActivity {
         ListFragmentPagerAdapter adapter = new ListFragmentPagerAdapter(getSupportFragmentManager());
         weekList = new ItemListFragment();
         weekList.setMaxTimeMillis(0);
+        weekList.setHandler(handler);
         monthList = new ItemListFragment();
-        monthList.setMaxTimeMillis(0);
+        monthList.setMaxTimeMillis(1);
+        monthList.setHandler(handler);
         allList = new ItemListFragment();
-        allList.setMaxTimeMillis(0);
+        allList.setMaxTimeMillis(2);
+        allList.setHandler(handler);
         adapter.addItem(weekList,getString(R.string.week));
         adapter.addItem(monthList,getString(R.string.month));
         adapter.addItem(allList,getString(R.string.all));
@@ -59,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(pager);
-        refreshLists();
     }
 
     @Override
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             });
             builder.create().show();
         }else{
+            filterButton.setText(getString(R.string.show_category));
             weekList.setFilterCategory(null);
             monthList.setFilterCategory(null);
             allList.setFilterCategory(null);
@@ -113,5 +119,10 @@ public class MainActivity extends AppCompatActivity {
         weekList.refreshList();
         monthList.refreshList();
         allList.refreshList();
+    }
+
+
+    public DBHandler getHandler() {
+        return handler;
     }
 }

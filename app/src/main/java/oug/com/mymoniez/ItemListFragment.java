@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,17 @@ import java.util.ArrayList;
 
 
 public class ItemListFragment extends ListFragment {
-    private MoneyEvent.Category filterCategory;
-    long maxTimeMillis;
+    private MoneyEvent.Category filterCategory=null;
+    long maxTimeMillis=0;
+    ArrayList<MoneyEvent> list;
+    DBHandler handler;
+    boolean activityCreated;
 
     public ItemListFragment() {
         // Required empty public constructor
         filterCategory=null;
+        maxTimeMillis =0;
+        activityCreated=false;
     }
 
     @Override
@@ -30,17 +36,8 @@ public class ItemListFragment extends ListFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        ArrayList<MoneyEvent> list= new ArrayList();
-        list.add(new MoneyEvent(1,11,System.currentTimeMillis(), MoneyEvent.Category.ALCOHOL,"xD"));
-        list.add(new MoneyEvent(1,11,System.currentTimeMillis(), MoneyEvent.Category.ALCOHOL,"xD"));
-        list.add(new MoneyEvent(1,11,System.currentTimeMillis(), MoneyEvent.Category.ALCOHOL,"xD"));
-        list.add(new MoneyEvent(1,11,System.currentTimeMillis(), MoneyEvent.Category.ALCOHOL,"xD"));
-        list.add(new MoneyEvent(1,11,System.currentTimeMillis(), MoneyEvent.Category.ALCOHOL,"xD"));
-        list.add(new MoneyEvent(1,11,System.currentTimeMillis(), MoneyEvent.Category.ALCOHOL,"xD"));
-        list.add(new MoneyEvent(1,11,System.currentTimeMillis(), MoneyEvent.Category.ALCOHOL,"xD"));
-        EventAdapter adapter = new EventAdapter(getActivity(),list);
-        setListAdapter(adapter);
+        activityCreated=true;
+        refreshList();
     }
 
     @Override
@@ -74,7 +71,11 @@ public class ItemListFragment extends ListFragment {
     }
 
     public void refreshList(){
-        //TODO
+        if (activityCreated) {
+            list = handler.getItemsList(maxTimeMillis, filterCategory);
+            ItemAdapter adapter = new ItemAdapter(getActivity(),list);
+            setListAdapter(adapter);
+        }
     }
 
     public void setFilterCategory(MoneyEvent.Category filterCategory) {
@@ -82,5 +83,9 @@ public class ItemListFragment extends ListFragment {
     }
     public void setMaxTimeMillis(long maxTimeMillis) {
         this.maxTimeMillis = maxTimeMillis;
+    }
+
+    public void setHandler(DBHandler handler) {
+        this.handler = handler;
     }
 }

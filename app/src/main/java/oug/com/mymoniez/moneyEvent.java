@@ -14,8 +14,23 @@ public class MoneyEvent {
 
     public enum Category{ALCOHOL,FOOD,CLOTHES,BOOKS,GROCERIES,ENTERTAINMENT,INCOME,OTHER}
 
+    public MoneyEvent() {
+        eventId=-1;
+        value=-1;
+        dateMillis=0;
+        category=null;
+        description=null;
+    }
+
     public MoneyEvent(int eventId, double value, long dateMillis, Category category, String description) {
         this.eventId = eventId;
+        this.value = value;
+        this.dateMillis = dateMillis;
+        this.category = category;
+        this.description = description;
+    }
+
+    public MoneyEvent(double value, long dateMillis, Category category, String description) {
         this.value = value;
         this.dateMillis = dateMillis;
         this.category = category;
