@@ -85,7 +85,7 @@ public class MoneyEvent {
         return String.format(Locale.US,"%.2f",value);
     }
     public static String getDateString(long dateMillis){
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyy hh:mm");
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyy HH:mm");
         Date date = new Date();
         date.setTime(dateMillis);
         return format.format(date);

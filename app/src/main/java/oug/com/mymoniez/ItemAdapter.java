@@ -45,7 +45,7 @@ public class ItemAdapter extends ArrayAdapter<MoneyEvent>{
 
         MoneyEvent event = getItem(position);
         holder.categoryIcon.setImageResource(MoneyEvent.getCategoryDrawable(event.getCategory()));
-        holder.valueText.setText(event.getValue()+"");
+        holder.valueText.setText(MoneyEvent.getValueString(event.getValue()));
         holder.categoryText.setText(MoneyEvent.getCategoryName(event.getCategory()));
         holder.descriptionText.setText(event.getDescription());
 

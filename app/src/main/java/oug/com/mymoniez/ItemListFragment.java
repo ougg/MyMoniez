@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class ItemListFragment extends ListFragment {
@@ -37,6 +38,7 @@ public class ItemListFragment extends ListFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         activityCreated=true;
+        handler = ((MainActivity)getActivity()).getHandler();
         refreshList();
     }
 
@@ -85,7 +87,4 @@ public class ItemListFragment extends ListFragment {
         this.maxTimeMillis = maxTimeMillis;
     }
 
-    public void setHandler(DBHandler handler) {
-        this.handler = handler;
-    }
 }
