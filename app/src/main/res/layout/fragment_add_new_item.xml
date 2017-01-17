@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".AddNewItemFragment"
-    android:padding="@dimen/add_new_layout_padding">
+    android:padding="@dimen/add_new_layout_padding"
+    android:background="@color/lightGray"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,6 +27,7 @@
             android:layout_alignTop="@+id/categoryIcon"
             android:paddingStart="@dimen/details_text_padding"
             android:textSize="@dimen/small_font"
+            android:textColor="@color/normalTextColor"
             />
 
         <EditText
@@ -37,7 +40,9 @@
             android:layout_alignBottom="@+id/categoryIcon"
             android:layout_toRightOf="@+id/categoryIcon"
             android:textSize="@dimen/large_font"
-            android:textAlignment="viewEnd"/>
+            android:textAlignment="viewEnd"
+            android:textColor="@color/normalTextColor"
+            />
 
         <Button
             android:layout_width="@dimen/add_new_button_width"
@@ -46,7 +51,9 @@
             android:id="@+id/categoryButton"
             android:layout_below="@id/valueEditText"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/add_new_top_margin"/>
+            android:layout_marginTop="@dimen/add_new_top_margin"
+            android:textColor="@color/normalTextColor"
+            android:background="@color/mediumGray"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -60,7 +67,9 @@
             android:hint="@string/enter_description"
             android:gravity="top"
             android:padding="@dimen/add_new_editText_padding"
-            android:layout_marginTop="@dimen/add_new_top_margin"/>
+            android:layout_marginTop="@dimen/add_new_top_margin"
+            android:textColor="@color/normalTextColor"
+            android:textColorHint="@color/lightestGray"/>
 
         <Button
             android:layout_width="@dimen/add_new_button_width"
@@ -69,7 +78,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/descriptionEditText"
             android:layout_marginTop="@dimen/add_new_top_margin"
-            android:text="@string/add"/>
+            android:text="@string/add"
+            android:textColor="@color/normalTextColor"
+            android:background="@color/mediumGray"/>
     </RelativeLayout>
 
 

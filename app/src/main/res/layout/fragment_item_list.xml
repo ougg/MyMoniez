@@ -3,9 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ItemListFragment"
+    android:background="@color/mediumGray"
     android:padding="@dimen/list_fragment_padding">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@null"
+        android:scrollbars="none"
         android:id="@android:id/list"/>
 </LinearLayout>

@@ -15,8 +15,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="wrap_content"
+            android:background="@color/darkGray"
             app:popupTheme="@style/AppTheme.PopupOverlay">
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/filterButton"
-                    android:background="?attr/colorPrimary"
+                    android:background="@null"
                     android:layout_alignParentEnd="true"
                     android:text="@string/show_category"
                     android:padding="@dimen/toolbar_button_padding"
@@ -52,6 +52,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/darkGray"
             app:tabMode="fixed"
             app:tabGravity="fill"
             />
@@ -62,6 +63,7 @@
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@null"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <android.support.design.widget.FloatingActionButton
@@ -70,6 +72,7 @@
         android:layout_height="@dimen/action_button_size"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/buttonColor"
         android:src="@drawable/add" />
 
 </android.support.design.widget.CoordinatorLayout>

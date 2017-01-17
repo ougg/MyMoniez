@@ -4,9 +4,12 @@ package oug.com.mymoniez;
 import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.MovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -34,12 +37,17 @@ public class DetailsFragment extends DialogFragment {
         ((ImageView) view.findViewById(R.id.categoryIcon)).setImageResource(MoneyEvent.getCategoryDrawable(category));
         ((TextView) view.findViewById(R.id.categoryText)).setText(MoneyEvent.getCategoryName(category));
         ((TextView) view.findViewById(R.id.valueText)).setText(args.getString(MainActivity.VALUE));
-        ((TextView) view.findViewById(R.id.dateText)).setText(getString(R.string.date_added)+args.getString(MainActivity.DATE));
-        ((TextView) view.findViewById(R.id.descriptionText)).setText(args.getString(MainActivity.DESCRIPTION));
+        ((TextView) view.findViewById(R.id.dateText)).setText(args.getString(MainActivity.DATE));
+
+        TextView descriptionText = (TextView) view.findViewById(R.id.descriptionText);
+        descriptionText.setText(args.getString(MainActivity.DESCRIPTION));
+        //allow scrolling when text is bigger than the set limit of lines
+        descriptionText.setMovementMethod(new ScrollingMovementMethod());
 
 
         ImageButton deleteButton = (ImageButton) view.findViewById(R.id.deleteButton);
         deleteButton.setOnClickListener(new OnDeleteClickListener());
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         return view;
     }
 

@@ -9,7 +9,7 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/list_item_layout_padding"
-        android:background="#393939">
+        android:background="@color/lightGray">
 
         <ImageView
             android:layout_width="@dimen/list_item_image_size"
@@ -27,29 +27,29 @@
             android:text="1111$"
             android:textColor="#ffffff"
             android:textAlignment="center"
-            android:textSize="@dimen/large_font"
+            android:textSize="@dimen/medium_font"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:ellipsize="start"
+            android:scrollHorizontally="true"/>
 
         <TextView
             style="@style/listItemText"
             android:id="@+id/categoryText"
             android:text="Category"
-            android:textSize="@dimen/medium_font"
+            android:textSize="@dimen/small_font"
             android:layout_alignTop="@+id/categoryIcon"
-            android:paddingTop="@dimen/list_item_text_padding"
-
-             />
+            android:paddingTop="@dimen/list_item_text_padding"/>
 
         <TextView
             style="@style/listItemText"
             android:id="@+id/descriptionText"
             android:text="Description"
-            android:textSize="@dimen/small_font"
+            android:textSize="@dimen/tiny_font"
             android:layout_alignBottom="@+id/categoryIcon"
-            android:paddingBottom="@dimen/list_item_text_padding"
-
-            />
+            android:paddingBottom="@dimen/list_item_text_padding" />
 
     </RelativeLayout>
 </FrameLayout>

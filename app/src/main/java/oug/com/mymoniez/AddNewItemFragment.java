@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -70,13 +71,14 @@ public class AddNewItemFragment extends DialogFragment implements View.OnClickLi
             }
         });
 
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         return view;
     }
 
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.categoryButton){
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.DialogTheme);
 
             String[] categories = new String[MoneyEvent.Category.values().length];
             for(int i=0;i<categories.length;i++){

@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="date_added">Date added: </string>
+    <string name="date_added">Added: </string>
     <string name="week">Week</string>
     <string name="month">Month</string>
     <string name="all">All</string>
@@ -16,5 +16,6 @@
     <string name="total">Total:</string>
     <string name="show_category">Show category</string>
     <string name="show_all">Show all</string>
+    <string name="description">Description:</string>
 
 </resources>

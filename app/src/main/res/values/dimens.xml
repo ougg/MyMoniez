@@ -5,14 +5,14 @@
     <dimen name="fab_margin">16dp</dimen>
 
 
-    <dimen name="large_font">35sp</dimen>
-    <dimen name="medium_font">22sp</dimen>
+    <dimen name="large_font">30sp</dimen>
+    <dimen name="medium_font">25sp</dimen>
     <dimen name="small_font">18sp</dimen>
     <dimen name="tiny_font">15sp</dimen>
 
     <!-- LIST ITEM -->
     <dimen name="list_item_text_padding">10dp</dimen>
-    <dimen name="list_item_layout_padding">10dp</dimen>
+    <dimen name="list_item_layout_padding">5dp</dimen>
     <dimen name="list_item_image_padding">5dp</dimen>
     <dimen name="list_item_image_size">75dp</dimen>
 
@@ -21,17 +21,19 @@
 
     <!-- DETAILS -->
     <dimen name="details_image_size">75dp</dimen>
-    <dimen name="details_layout_padding">10dp</dimen>
+    <dimen name="details_layout_padding">15dp</dimen>
     <dimen name="details_category_width">175dp</dimen>
-    <dimen name="details_text_padding">10dp</dimen>
-    <dimen name="details_top_margin">5dp</dimen>
+    <dimen name="details_text_padding">15dp</dimen>
+    <dimen name="details_description_padding">5dp</dimen>
+    <dimen name="details_small_top_margin">5dp</dimen>
+    <dimen name="details_big_top_margin">15dp</dimen>
 
     <!--ADD NEW -->
     <dimen name="add_new_button_width">230dp</dimen>
     <dimen name="add_new_desc_editText_height">150dp</dimen>
     <dimen name="add_new_editText_padding">10dp</dimen>
     <dimen name="add_new_top_margin">10dp</dimen>
-    <dimen name="add_new_layout_padding">10dp</dimen>
+    <dimen name="add_new_layout_padding">15dp</dimen>
 
     <!--TOOLBAR -->
     <dimen name="toolbar_button_padding">5dp</dimen>

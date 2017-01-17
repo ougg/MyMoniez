@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".DetailsFragment"
-    android:padding="@dimen/details_layout_padding">
+    android:padding="@dimen/details_layout_padding"
+    android:background="@color/lightGray">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,7 +25,9 @@
             android:layout_toEndOf="@+id/categoryIcon"
             android:layout_alignTop="@+id/categoryIcon"
             android:paddingStart="@dimen/details_text_padding"
+            android:layout_marginTop="@dimen/details_small_top_margin"
             android:textSize="@dimen/small_font"
+            android:textColor="@color/normalTextColor"
             />
 
         <TextView
@@ -34,17 +37,40 @@
             android:id="@+id/valueText"
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@+id/categoryIcon"
-            android:textSize="@dimen/large_font"/>
+            android:textSize="@dimen/large_font"
+            android:textColor="@color/normalTextColor"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date added: 22.04.2016 22:56"
+            android:text="@string/date_added"
+            android:layout_alignBottom="@+id/dateText"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/tiny_font"
+            android:textColor="@color/normalTextColor"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22.04.2016 22:56"
             android:id="@+id/dateText"
             android:layout_below="@+id/categoryIcon"
-            android:layout_alignStart="@+id/categoryIcon"
-            android:layout_marginTop="@dimen/details_top_margin"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/details_big_top_margin"
             android:textSize="@dimen/small_font"
+            android:textColor="@color/normalTextColor"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:layout_below="@+id/dateText"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/details_small_top_margin"
+            android:textSize="@dimen/tiny_font"
+            android:textColor="@color/normalTextColor"
             />
 
         <TextView
@@ -54,9 +80,12 @@
             android:id="@+id/descriptionText"
             android:layout_below="@+id/dateText"
             android:layout_alignStart="@id/dateText"
-            android:layout_marginTop="@dimen/details_top_margin"
-            android:paddingEnd="@dimen/details_text_padding"
-            android:textSize="@dimen/tiny_font"/>
+            android:layout_marginTop="@dimen/details_small_top_margin"
+            android:paddingEnd="@dimen/details_description_padding"
+            android:textSize="@dimen/tiny_font"
+            android:textColor="@color/normalTextColor"
+            android:maxLines="12"
+            android:scrollbars="vertical"/>
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -64,7 +93,7 @@
             android:id="@+id/deleteButton"
             android:layout_below="@id/descriptionText"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/details_top_margin"
+            android:layout_marginTop="@dimen/details_big_top_margin"
             android:padding="@dimen/details_text_padding"
             android:background="@drawable/delete"
             />

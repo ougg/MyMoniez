@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             @Override
             public void onClick(View view) {
                 AddNewItemFragment addNew = new AddNewItemFragment();
+
                 FragmentManager fm = getSupportFragmentManager();
                 addNew.show(fm,"AddDialog");
             }
@@ -87,28 +88,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     public void filterButtonClicked(View v){
 
         //if button text is "show category" display category list
         if(((Button)v).getText().equals(getString(R.string.show_category))){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.DialogTheme);
             final String[] categories = new String[MoneyEvent.Category.values().length];
             for(int i=0;i<categories.length;i++){
                 categories[i]=MoneyEvent.getCategoryName(MoneyEvent.Category.values()[i]);
@@ -125,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                     refreshLists();
                 }
             });
+
             builder.create().show();
         }else{
             filterButton.setText(getString(R.string.show_category));

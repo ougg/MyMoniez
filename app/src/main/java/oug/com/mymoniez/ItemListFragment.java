@@ -67,7 +67,11 @@ public class ItemListFragment extends ListFragment {
     public double getTotal(){
         double total=0;
         for (int i=0;i<getListAdapter().getCount();i++){
-            total+=((MoneyEvent) getListAdapter().getItem(i)).getValue();
+            double value = ((MoneyEvent) getListAdapter().getItem(i)).getValue();
+            if(((MoneyEvent) getListAdapter().getItem(i)).getCategory()== MoneyEvent.Category.INCOME){
+                total+=value;
+            }else
+                total-=value;
         }
         return total;
     }

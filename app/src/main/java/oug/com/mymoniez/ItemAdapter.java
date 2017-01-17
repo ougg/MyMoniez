@@ -1,6 +1,8 @@
 package oug.com.mymoniez;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,12 @@ public class ItemAdapter extends ArrayAdapter<MoneyEvent>{
         MoneyEvent event = getItem(position);
         holder.categoryIcon.setImageResource(MoneyEvent.getCategoryDrawable(event.getCategory()));
         holder.valueText.setText(MoneyEvent.getValueString(event.getValue()));
+        if(event.getCategory()== MoneyEvent.Category.INCOME){
+            holder.valueText.setTextColor(ContextCompat.getColor(getContext(),R.color.incomeColor));
+        }else{
+            holder.valueText.setTextColor(ContextCompat.getColor(getContext(),R.color.expenseColor));
+        }
+
         holder.categoryText.setText(MoneyEvent.getCategoryName(event.getCategory()));
         holder.descriptionText.setText(event.getDescription());
 
