@@ -1,9 +1,11 @@
 package oug.com.mymoniez;
 
 
+import android.content.DialogInterface;
 import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.text.method.MovementMethod;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
@@ -54,12 +56,26 @@ public class DetailsFragment extends DialogFragment {
     class OnDeleteClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            Bundle args = getArguments();
-            int id = args.getInt(MainActivity.EVENT_ID);
-            DBHandler handler = ((MainActivity)getActivity()).getHandler();
-            handler.deleteItem(id);
-            ((MainActivity)getActivity()).refreshLists();
-            dismiss();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.DialogTheme);
+            builder.setMessage(R.string.confirm_delete);
+
+            builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Bundle args = getArguments();
+                    int id = args.getInt(MainActivity.EVENT_ID);
+                    DBHandler handler = ((MainActivity)getActivity()).getHandler();
+                    handler.deleteItem(id);
+                    ((MainActivity)getActivity()).refreshLists();
+                    dismiss();
+                }
+            });
+            builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {}
+            });
+            builder.create().show();
         }
     }
 }

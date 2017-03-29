@@ -105,7 +105,6 @@ public class AddNewItemFragment extends DialogFragment implements View.OnClickLi
     }
 
     public void addNew(){
-        //Log.i("testing",value+"");
         String text = valueEditText.getText().toString();
         if(value==-1 && (text.equals("")||text==null)){
             Toast.makeText(getContext(),getString(R.string.specifyValue),Toast.LENGTH_SHORT).show();

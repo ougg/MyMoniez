@@ -17,5 +17,8 @@
     <string name="show_category">Show category</string>
     <string name="show_all">Show all</string>
     <string name="description">Description:</string>
+    <string name="confirm_delete">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>
